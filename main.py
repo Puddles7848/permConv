@@ -3,7 +3,7 @@ import argparse
 import sys
 
 
-# Numbers
+## Numbers
 # Checks if it's an intable str that is <778
 def isNums(perm: str) -> bool:
     # Is it numbers? (777)
@@ -24,6 +24,7 @@ def binaryList(bin: str) -> list[int]:  # Like '0b111'
     return out
 
 
+# 777 -> [1, 1, 1, 1, 1, 1 ,1 1, 1]
 def nums2Raw(perm: str) -> list[int]:
     if not isNums(perm):
         raise ValueError
