@@ -3,6 +3,7 @@ import argparse
 import sys
 
 
+# Numbers
 # Checks if it's an intable str that is <778
 def isNums(perm: str) -> bool:
     # Is it numbers? (777)
@@ -15,12 +16,13 @@ def isNums(perm: str) -> bool:
 
 
 # Turns that '0b111' to [1, 1, 1]
-def binaryList(bin: str) -> list[int]: # Like '0b111'
+def binaryList(bin: str) -> list[int]:  # Like '0b111'
     bin = bin[2:]
     out = []
     for i in bin:
         out.append(int(i))
     return out
+
 
 def nums2Raw(perm: str) -> list[int]:
     if not isNums(perm):
@@ -30,8 +32,8 @@ def nums2Raw(perm: str) -> list[int]:
         out += binaryList(bin(int(perm[i])))
     return out
 
-# Bits
 
+## Bits
 # Strip first bit like the `d` in `drwxrwxrwx`
 def stripBits(perm):
     if len(perm) == 10:
@@ -42,6 +44,7 @@ def stripBits(perm):
         raise ValueError
     return perm
 
+
 # Checks if it is strippable and if rwx are in order
 def isBits(perm: str) -> bool:
 
@@ -51,8 +54,8 @@ def isBits(perm: str) -> bool:
         for i in range(0, 8, 3):
             if not (
                 perm[i] in ("r", "-")
-            and perm[i + 1] in ("w", "-")
-            and perm[i + 2] in ("x", "-")
+                and perm[i + 1] in ("w", "-")
+                and perm[i + 2] in ("x", "-")
             ):
                 raise ValueError
     except ValueError:
