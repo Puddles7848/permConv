@@ -1,6 +1,6 @@
 ## Mode
 # Checks if it is strippable and if rwx are in order
-def __self__(perm: str) -> list[int]:
+def main(perm: str) -> list[int]:
 
     # Strip first bit like the `d` in `drwxrwxrwx`
     if len(perm) == 10:
